@@ -9,7 +9,7 @@ services:
       - /app/node_modules
     ports:
       - 3001:3001
-    command: npm run start
+    command: npm run dev
     restart: always
     networks:
       - seny-network-users
