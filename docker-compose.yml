@@ -1,0 +1,21 @@
+services:
+  users:
+    container_name: seny-users
+    build:
+      context: .
+      target: build
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 3001:3001
+    command: npm run start
+    restart: always
+    networks:
+      - seny-network-users
+
+networks:
+  seny-network-users:
+    driver: bridge
+    name: seny-network
+    external: true
